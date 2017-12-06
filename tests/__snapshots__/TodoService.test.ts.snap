@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoService todos 1`] = `
+Array [
+  Object {
+    "completed": true,
+    "id": "1",
+    "title": "abc",
+  },
+  Object {
+    "completed": false,
+    "id": "2",
+    "title": "def",
+  },
+  Object {
+    "completed": false,
+    "id": "3",
+    "title": "ghi",
+  },
+]
+`;

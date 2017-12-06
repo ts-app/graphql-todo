@@ -1,0 +1,32 @@
+{
+  "name": "my-todo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+"scripts": {
+    "clean": "rm -fr ./dist",
+    "compile": "tsc -p tsconfig-compile.json && [ -r src/*.graphqls ] && cp src/*.graphqls dist || exit 0",
+    "compile-watch": "tsc -p tsconfig-compile.json --watch",
+    "coverage": "jest --maxWorkers=1 --coverage --collectCoverage",
+    "graphql": "seed=1 ts-app-graphql -p dist/todoSchemaDefinition.js -d -m mongodb://localhost:27017",
+    "lint": "tslint --project",
+    "prepublishOnly": "npm run lint && npm run compile && npm run test",
+    "test": "jest --maxWorkers=1",
+    "test-watch": "jest --maxWorkers=1 --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ts-app/graphql": "0.0.2",
+    "@ts-app/server-bom": "0.0.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^21.1.8",
+    "jest": "^21.2.1",
+    "ts-jest": "^21.2.4",
+    "tslint": "^5.8.0",
+    "tslint-config-standard": "^7.0.0",
+    "typescript": "^2.6.2"
+  }
+}
