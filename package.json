@@ -3,20 +3,20 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-"scripts": {
+  "scripts": {
     "clean": "rm -fr ./dist",
     "compile": "tsc -p tsconfig-compile.json && [ -r src/*.graphqls ] && cp src/*.graphqls dist || exit 0",
     "compile-watch": "tsc -p tsconfig-compile.json --watch",
     "coverage": "jest --maxWorkers=1 --coverage --collectCoverage",
     "graphql": "seed=1 ts-app-graphql -p dist/todoSchemaDefinition.js -d -m mongodb://localhost:27017",
-    "lint": "tslint --project",
+    "lint": "tslint --project tsconfig.json",
     "prepublishOnly": "npm run lint && npm run compile && npm run test",
     "test": "jest --maxWorkers=1",
     "test-watch": "jest --maxWorkers=1 --watch"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@ts-app/graphql": "0.0.2",
     "@ts-app/server-bom": "0.0.3"
