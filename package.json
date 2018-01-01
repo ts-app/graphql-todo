@@ -19,10 +19,10 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@ts-app/graphql": "^0.0.5",
+    "@ts-app/graphql": "^0.0.6",
     "@ts-app/mongo": "^0.0.4",
-    "@ts-app/security": "^0.0.6",
-    "@ts-app/server-bom": "^0.0.5"
+    "@ts-app/security": "^0.0.7",
+    "@ts-app/server-bom": "^0.0.6"
   },
   "devDependencies": {
     "@types/jest": "^21.1.8",
