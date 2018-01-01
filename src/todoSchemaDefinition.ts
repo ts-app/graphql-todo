@@ -4,11 +4,14 @@ import {
 } from '@ts-app/graphql'
 import { loadFile } from '@ts-app/common'
 import { TodoService } from './TodoService'
+import { securitySchemaDefinition } from '@ts-app/security'
+import { MongoService } from '@ts-app/mongo'
 
-export const todoSchemaDefinition = (): SchemaDefinition => {
+export const todoSchemaDefinition = ({ mongoService }: { mongoService: MongoService }): SchemaDefinition => {
   const resolver = ResolverService.getInstance()
 
   const standard = standardSchemaDefinition()
+  const security = securitySchemaDefinition({ mongoService })
 
   const todoService = new TodoService()
   resolver.registerService(todoService)
@@ -20,7 +23,8 @@ export const todoSchemaDefinition = (): SchemaDefinition => {
   return {
     resolvers, typeDefs,
     dependencies: {
-      standard
+      standard,
+      security
     }
   }
 }
