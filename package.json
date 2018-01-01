@@ -11,6 +11,7 @@
     "graphql": "seed=1 ts-app-graphql -p dist/todoSchemaDefinition.js -d -m mongodb://localhost:27017",
     "lint": "tslint --project tsconfig.json",
     "prepublishOnly": "npm run lint && npm run compile && npm run test",
+    "start": "npm run compile && npm run graphql",
     "test": "jest --maxWorkers=1",
     "test-watch": "jest --maxWorkers=1 --watch"
   },
@@ -18,11 +19,16 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@ts-app/graphql": "0.0.2",
-    "@ts-app/server-bom": "0.0.3"
+    "@ts-app/graphql": "^0.0.6",
+    "@ts-app/mongo": "^0.0.4",
+    "@ts-app/security": "^0.0.7",
+    "@ts-app/server-bom": "^0.0.6"
   },
   "devDependencies": {
     "@types/jest": "^21.1.8",
+    "apollo-fetch": "^0.7.0",
+    "graphql-tag": "^2.6.0",
+    "graphql-tools": "^2.12.0",
     "jest": "^21.2.1",
     "ts-jest": "^21.2.4",
     "tslint": "^5.8.0",

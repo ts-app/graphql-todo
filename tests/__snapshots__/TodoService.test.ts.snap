@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoService Execute GraphQL queries SecurityService cannot signUp() with invalid email 1`] = `
+Object {
+  "signUp": Object {
+    "error": "Invalid email",
+    "user": null,
+  },
+}
+`;
+
+exports[`user1 cannot see user2 todos 1`] = `
+Array [
+  Object {
+    "completed": false,
+    "ownerName": "user1",
+    "title": "first todo by user1",
+  },
+]
+`;
+
+exports[`user2 cannot see user1 todos 1`] = `
+Array [
+  Object {
+    "completed": false,
+    "ownerName": "user2",
+    "title": "first todo by user2",
+  },
+]
+`;

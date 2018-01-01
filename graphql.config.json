@@ -1,0 +1,29 @@
+{
+  "README": "Documentation here - https://github.com/jimkyndemeyer/js-graphql-intellij-plugin",
+  "schema": {
+    "request": {
+      "url": "http://localhost:3000/graphql",
+      "method": "POST",
+      "postIntrospectionQuery": true,
+      "README_options": "See the 'Options' section at https://github.com/then/then-request",
+      "options": {
+        "headers": {
+          "user-agent": "JS GraphQL"
+        }
+      }
+    }
+  },
+  "README_endpoints": "A list of GraphQL endpoints that can be queried from '.graphql' files in the IDE",
+  "endpoints": [
+    {
+      "name": "Default (http://localhost:3000/graphql)",
+      "url": "http://localhost:3000/graphql",
+      "options": {
+        "headers": {
+          "user-agent": "JS GraphQL",
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YTJlMWFjYWY3Njk0ZTU5NmU5MDI3NzUiLCJpYXQiOjE1MTI5NzA5NTYsImV4cCI6MTUxMjk3Mjc1Nn0.ke_cc3OP10-vyFBAbsbeMucpwyrngv1FbJeHtneilpw"
+        }
+      }
+    }
+  ]
+}

@@ -1,12 +1,12 @@
 type Query {
-    todos: [Todo]
+    todos: TodosPayload
 }
 
 type Mutation {
-    createTodo(title: String!): NoPayload
-    updateTodo(id: String!, title: String!): NoPayload
-    deleteTodo(id: String!): NoPayload
-    markCompleted(id: String!, completed: Boolean): NoPayload
+    createTodo(title: String!): CreateTodoPayload
+    updateTodo(ownerId: String!, id: String!, title: String!): NoPayload
+    deleteTodo(ownerId: String!, id: String!): NoPayload
+    markCompleted(ownerId: String!, id: String!, completed: Boolean): NoPayload
     deleteCompleted: NoPayload
 }
 
@@ -15,8 +15,16 @@ type Todo {
     title: String!
     completed: Boolean
     createdAt: Date
+    ownerId: String
+    ownerName: String
 }
 
-type NoPayload {
+type TodosPayload {
     error: String
+    docs: [Todo]
+}
+
+type CreateTodoPayload {
+    error: String
+    id: String
 }
